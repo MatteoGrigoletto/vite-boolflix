@@ -1,21 +1,30 @@
 <template>
-    <div>
-        <form action="" @submit.prevent="filtering">
-            <input type="text" v-model="store.title">
-            <button > Cerca</button>
-        </form>
-    </div>
+    <header>
+        <section class="first-section-header">
+            <div class="container-80">
+                <AppLogo/>
+                <SearchBar @filter="filtering"/>
+            </div>
+        </section>
+    </header>
 </template>
 
 <script>
 import {store} from '../store';
 import axios from 'axios';
+
+import AppLogo from './another-comp/AppLogo.vue';
+import SearchBar from './another-comp/SearchBar.vue';
     export default {
         name:'AppHeader',
         data(){
             return{
                 store,
             }
+        },
+        components:{
+            SearchBar,
+            AppLogo,
         },
         methods: {
 // aggiunge metodo per la ricerca filtrata dei film
@@ -45,5 +54,13 @@ import axios from 'axios';
 </script>
 
 <style lang="scss" scoped>
+.first-section-header{
+    background-color: black;
 
+    .container-80{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 </style>

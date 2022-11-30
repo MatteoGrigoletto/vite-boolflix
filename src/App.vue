@@ -29,6 +29,6 @@ import AppFooter from './components/AppFooter.vue';
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import './style/global-scss.scss';
 </style>
