@@ -1,7 +1,7 @@
 <template>
     <header>
         <section class="first-section-header">
-            <div class="container-80">
+            <div class="container">
                 <AppLogo/>
                 <SearchBar @filter="filtering"/>
             </div>
@@ -46,8 +46,8 @@ import SearchBar from './another-comp/SearchBar.vue';
       })
       .then((response) =>{
         this.store.listTv = response.data.results
-        console.log(this.store.listTv)
       })
+      this.store.fullList = this.store.listFilm.concat(this.store.listTv);
             },   
         },
     }
@@ -56,8 +56,9 @@ import SearchBar from './another-comp/SearchBar.vue';
 <style lang="scss" scoped>
 .first-section-header{
     background-color: black;
+    padding: 20px 0px;
 
-    .container-80{
+    .container{
         display: flex;
         justify-content: space-between;
         align-items: center;
