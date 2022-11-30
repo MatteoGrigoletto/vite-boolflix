@@ -25,7 +25,6 @@ import AppFooter from './components/AppFooter.vue';
       AppHeader,
       AppMain,
       AppFooter,
-
     },
   }
 </script>
