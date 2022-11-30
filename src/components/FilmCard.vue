@@ -1,6 +1,6 @@
 <template>
 
-<!-- card stampata dalla list film -->
+<!-- card  -->
 
     <div class="card" v-for="film in store.fullList">
 
@@ -25,32 +25,6 @@
             </div>
         </div>    
     </div>
-
- <!-- card stampata dalla lista serie tv -->
-    
-    <!-- <div class="card" v-for="tv in store.listTv">
-
-        <img  v-if="(tv.poster_path == null)" src="../assets/noflag.png" alt="">
-        <img class="poster" :src="`http://image.tmdb.org/t/p/w500/${tv.poster_path}`" alt="">
-
-        <div class="text-box">
-            <h2>{{tv.name}}</h2>
-            <p>{{tv.original_name}}</p>
-            <div v-if="tv.original_language === 'it'">
-                <img class="flag" src="../assets/italy.png" alt="">
-            </div>
-            <div v-else-if="tv.original_language === 'en'">
-                <img class="flag" src="../assets/unking.png" alt="">
-            </div>
-            <div v-else>
-                <img class="flag" src="../assets/noflag.png" alt="">
-            </div>
-            <div class="stars">
-                <i class="fa-solid fa-star" v-for=" index in 5"
-                :class="startsCalcolate(tv.vote_average)  >= index ? 'gold' : 'gray'" ></i>
-            </div>
-        </div>
-    </div> -->
 </template>
 
 <script>

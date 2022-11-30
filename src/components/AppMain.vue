@@ -1,8 +1,8 @@
 <template>
 <main>
     <section class="first-section-main">
-        <div class="information">
-            <h2>Hai trovato {{itemSearched}} trasmissioni ( {{store.listTv.length}} sono serie TV )</h2>
+        <div class="information" v-if="store.active === true">
+            <h2>Hai trovato {{store.fullList.length}} trasmissioni ( {{store.listTv.length}} sono serie TV )</h2>
         </div>
         <div class="film-list" >
         <FilmCard/>
@@ -26,12 +26,6 @@ import FilmCard from './FilmCard.vue';
     components: {
         FilmCard,
     },
-    computed:{
-        itemSearched(){
-         let fullList = this.store.listFilm.concat(this.store.listTv)
-         return fullList.length;
-        }
-    }
 }
 </script>
 
