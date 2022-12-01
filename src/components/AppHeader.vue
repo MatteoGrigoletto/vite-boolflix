@@ -57,8 +57,7 @@ import SearchBar from './another-comp/SearchBar.vue';
         });
             axios.get('https://api.themoviedb.org/3/tv/popular?api_key=8e140fa3ab237a4b70f6371d23a8cd27&language=en-US&page=1')
             .then((response) =>{
-            this.store.bestTvSeries = response.data.results
-            console.log(response.data.results)
+            this.store.bestTvSeries = response.data.results;
         })
             },   
         }
