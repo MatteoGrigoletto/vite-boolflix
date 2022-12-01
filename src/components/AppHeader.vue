@@ -30,26 +30,26 @@ import SearchBar from './another-comp/SearchBar.vue';
 // aggiunge metodo per la ricerca filtrata dei film
             filtering(){
                 axios.get('https://api.themoviedb.org/3/search/movie', {
-        params: {
-          api_key: '8e140fa3ab237a4b70f6371d23a8cd27',
-          query: this.store.title,
-        }
-      })
-      .then((response) =>{
-        this.store.listFilm = response.data.results;
-      }),
-      axios.get('https://api.themoviedb.org/3/search/tv', {
-        params: {
-          api_key: '8e140fa3ab237a4b70f6371d23a8cd27',
-          query: this.store.title,
-        }
-      })
-      .then((response) =>{
-        this.store.listTv = response.data.results
-      })
-      this.store.fullList = this.store.listFilm.concat(this.store.listTv);
-            },   
-        },
+                params: {
+                api_key: '8e140fa3ab237a4b70f6371d23a8cd27',
+                query: this.store.title,
+                }
+            })
+            .then((response) =>{
+                this.store.listFilm = response.data.results;
+                axios.get('https://api.themoviedb.org/3/search/tv', {
+                params: {
+                api_key: '8e140fa3ab237a4b70f6371d23a8cd27',
+                query: this.store.title,
+                }
+            })
+            .then((response) =>{
+                this.store.listTv = response.data.results;
+                this.store.fullList = this.store.listFilm.concat(this.store.listTv);
+            })
+        }) 
+    },   
+},
         created(){
             axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=8e140fa3ab237a4b70f6371d23a8cd27')
             .then((response) =>{
