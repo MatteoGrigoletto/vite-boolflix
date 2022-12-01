@@ -5,6 +5,13 @@
             <h2>Hai trovato {{store.fullList.length}} trasmissioni ( {{store.listTv.length}} sono serie TV )</h2>
         </div>
         <div class="film-list" >
+            <div>
+                <StartTrendFilm  :trendList="store.trendFilmList"/>   
+            </div>
+            <div>
+                <StartBestSeries :seriesList="store.bestTvSeries"/>
+            </div>
+         
         <FilmCard/>
     </div>
     </section>  
@@ -15,7 +22,10 @@
 <script>
 import {store} from '../store';
 
-import FilmCard from './FilmCard.vue';
+import FilmCard from '../components/another-comp/FilmCard.vue';
+import StartTrendFilm from './another-comp/StartTrendFilm.vue';
+import StartBestSeries from './another-comp/StartBestSeries.vue';
+
     export default {
         name:'AppMain',
     data(){
@@ -25,6 +35,8 @@ import FilmCard from './FilmCard.vue';
     },
     components: {
         FilmCard,
+        StartTrendFilm,
+        StartBestSeries,
     },
 }
 </script>

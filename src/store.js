@@ -6,4 +6,6 @@ export const store  = reactive({
    fullList: [],
    title: '',
    active : false,
+   trendFilmList: [],
+   bestTvSeries: [],
 });
