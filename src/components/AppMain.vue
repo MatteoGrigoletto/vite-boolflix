@@ -4,16 +4,15 @@
         <div class="information" v-if="store.active === true">
             <h2>Hai trovato {{store.fullList.length}} trasmissioni ( {{store.listTv.length}} sono serie TV )</h2>
         </div>
+        <div>
+            <StartTrendFilm  :trendList="store.trendFilmList"/>   
+        </div>
+        <div>
+            <StartBestSeries :seriesList="store.bestTvSeries"/>
+        </div>
         <div class="film-list" >
-            <div>
-                <StartTrendFilm  :trendList="store.trendFilmList"/>   
-            </div>
-            <div>
-                <StartBestSeries :seriesList="store.bestTvSeries"/>
-            </div>
-         
         <FilmCard/>
-    </div>
+        </div>
     </section>  
 </main>
    
@@ -51,6 +50,8 @@ import StartBestSeries from './another-comp/StartBestSeries.vue';
     .film-list{
         display: flex;
         flex-wrap: wrap;
+        margin: calc(100% - 70px);
+        margin: 35px;
     }
 
 }
