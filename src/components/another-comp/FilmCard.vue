@@ -53,22 +53,30 @@ import {store} from '../../store';
     position: relative;
     height: 550px;
 
-    &:hover { 
-        transform: scale(1.1);
+    &:hover{
+        transform: scale(1.2);
         z-index: 10;
-      }
+        transition: 2s linear ;
+        .text-box { 
+            display: block;
+         }
+     }
     .poster{
         object-fit: cover;
     }
     .text-box{
+        display: none;
         position: absolute;
         content: '';
-        bottom: 0%;
-        left: 0%;
-        width: 100%;
-        height: 160px;
+        bottom: 2%;
+        left: 5%;
+        width: 90%;
+        height: 170px;
         text-align: center;
+        border:1px solid white;
+        border-radius: 10px;
         background-color: rgba(57, 56, 56, .5);
+
 
          h2{
             height:70px;
